@@ -1,0 +1,74 @@
+version: '3.7'
+services:
+  redis:
+    image: redis:5
+    container_name: redis
+    ports:
+      - 6379:6379
+    networks:
+      develop:
+        ipv4_address: 10.3.10.12
+
+  mysql:
+    image: percona:5.7
+    container_name: mysql
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_HOST=%
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_DATABASE=homestead
+      - MYSQL_USER=homestead
+      - MYSQL_PASSWORD=secret
+      # - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      # GRANT ALL PRIVILEGES ON *.* TO 'homestead'@'%' WITH GRANT OPTION;
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./code:/code
+      - ./configs/mysql/docker.cnf:/etc/mysql/docker.cnf
+    networks:
+      develop:
+        ipv4_address: 10.3.10.13
+
+  backend:
+    build:
+      dockerfile: backend.Dockerfile
+      context: .
+    container_name: backend
+    ports:
+      - 81:80
+    depends_on:
+      - mysql
+      - redis
+    networks:
+      develop:
+        ipv4_address: 10.3.10.14
+    volumes:
+      - ./code:/code
+      # - ./configs/nginx/code.conf:/etc/nginx/sites-enabled/code.conf
+    working_dir: /code
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:5
+    container_name: phpmyadmin
+    ports:
+      - 8080:80
+    environment:
+      - PMA_HOST=mysql
+      - PMA_USER=homestead
+      - PMA_PASSWORD=secret
+
+    networks:
+      develop:
+        ipv4_address: 10.3.10.15
+
+networks:
+  develop:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.3.10.0/24
+
+volumes:
+    db_data:

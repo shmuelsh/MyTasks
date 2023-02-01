@@ -1,0 +1,153 @@
+/* body{
+    direction: rtl;
+} */
+.title3{
+    justify-content: space-around;
+    display:flex;
+}
+.positioned {
+    position: relative;
+    border: 10px solid green;
+    height: 120px;
+    background: #ddd;
+ }
+ 
+ .positioned p {
+    border: 1px red solid;
+    margin: 4px;
+ padding: 4px;
+ }
+.aa{
+    border: radius 1px;
+    width: 40vw;
+    margin: auto;
+}
+.aa2{
+    
+    border: 2px  #acf109;
+
+}
+.title1{
+    background: sandybrown;
+    color: crimson;
+    width: auto;
+    height: 40px;
+    font-size: 25px;
+    padding-left: 8px;
+    font-weight: 500;
+   
+}
+.titledesc{
+    border: 2px solid #acf109;
+    border-radius: 5px;
+}
+.title2{
+    background: rgb(238, 197, 162);
+    color: crimson;
+    width: auto;
+    height: 90px;
+    font-size: 25px;
+    padding-left: 8px;
+    font-weight: 500;
+    
+    
+}
+.descrip{
+    background: rgb(238, 197, 162);
+    color: rgb(108, 8, 28);
+    width: auto;
+    height: auto;
+    font-size: 15px;
+    padding-left: 8px;
+    font-weight: 500;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-right: 5px;
+
+    
+}
+.myButton {
+	box-shadow:inset 0px 1px 0px 0px #4b3402;
+	background:linear-gradient(to bottom, #d0b60f 5%, #d0b60f 100%);
+	background-color:#d0b60f;
+	border-radius:6px;
+	border:1px solid #6a4705;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #c57a17;
+    
+}
+.pp{
+
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.btn {color: #fff; opacity: 0.8;}
+.btn:hover, .btn:active {color: #fff;}
+.btn {
+    /* background: rgb(195, 212, 38); Blue background */
+    /* border: none; Remove borders */
+    /* color: white; White text */
+    /* padding: 12px 16px; Some padding */
+    /* font-size: 16px; Set a font size */
+    /* cursor: pointer; Mouse pointer on hover */
+    height: auto;
+    color: red;
+       
+  }
+  
+  /* Darker background on mouse-over */
+  /* .btn:hover {
+    background-color: RoyalBlue;
+  } */
+  .edit{
+    color:#096691;
+    font-size: 17px;
+  }
+  /* .edit {color: #fff; opacity: 0.8;} */
+.edit:hover, .edit:active {color: rgb(170, 149, 79);}
+
+
+
+
+
+
+
+.btnn{
+
+font-family: Roboto, sans-serif;
+font-weight: 300;
+font-size: 15px;
+color: rgb(2, 2, 2);
+background-color: #acf109;
+padding: 10px 30px;
+/* border: 2px solid #0066cc; */
+box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+border-radius: 5px;
+transition : 1000ms;
+transform: translateY(0);
+display: flex;
+flex-direction:row-reverse;
+align-items: center;
+cursor: pointer;
+}
+
+.btnn:hover{
+
+transition : 1000ms;
+padding: 10px 50px;
+transform : translateY(-0px);
+background-color: #cca700;
+color:rgb(5, 5, 5);
+border: solid 2px #0066cc;
+}
+
+
+
+
